@@ -1,0 +1,23 @@
+﻿@model WebApplication1.Models.User;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create";
+}
+<div>
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name)
+        </div>
+         <div>
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Password)
+            @Html.TextBoxFor(model => model.Password)
+        </div>
+        <button class="btn btn-outline-primary" action="Create" controller ="User" formmethod="post">Submit</button>
+    }
+</div>

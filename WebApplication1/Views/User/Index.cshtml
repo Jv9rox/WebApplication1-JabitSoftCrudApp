@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<WebApplication1.Models.User>;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <a href="user/Create">Create</a>
+    <table class="table">
+        <thead>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                Actions
+            </th>
+        </thead>
+        <tbody>
+            @foreach(var modelItem in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(item => modelItem.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => modelItem.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => modelItem.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => modelItem.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => modelItem.CreatedDate)
+                    </td>
+                    <td>
+                        <a href="user/Update?id=@modelItem.Id">Edit</a>
+                        <a href="user/Delete?id=@modelItem.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
